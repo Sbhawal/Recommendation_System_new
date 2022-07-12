@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Netflix Recommender</title>
+	<!-- <link rel="icon" type="image/png" href="image/favicon.png" />  -----------------FAVICON LINK -->
+	<meta charset="utf-8">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/styles.css') }}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+	
+
+
+
+
+<div class="flex-wrapper">
+
+
+   <div class="banner">
+  <h1 class= "banner-text">Netflix Series Recommender</h1>
+</div>
+
+
+
+<div class="wrapper">
+  <div class="search-input">
+    <a href="" target="_blank" hidden></a>
+    <form autocomplete="off" method="POST", action={{url_for('recommendations')}}>
+      <input type="text" name="submit-form" placeholder="Enter a series...">
+      <div class="autocom-box">
+      </div>
+      <div class="icon"><label for="form" class="btn"><i class="fa fa-search"></i></label>
+        <input id="form" type="submit" value="" class="hidden"/></div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ----------------------------------------------------------------------------------------
+-------------------------------------------FOOTER--------------------------------------------
+--------------------------------------------------------------------------------------------->
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+
+        <h6>About </h6>
+        <p class="text-justify">A content based Recommendation System made by ranking the listings using cosine similarity. The features used for ranking are primarily Genre and Show Summary with year of release, votes and Rating. Web Output is presented from local server, on absence of any relevant data IMDb from RapidAPI is used. Codes present in <a class="linkedin" href="https://github.com/Sbhawal/Recommendation-Systems" target="_blank">Github repository.</a></p>
+      </div>
+
+
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="footer-text">Made with love by Snehaan.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="github" href="https://github.com/Sbhawal" target="_blank"><i class="fa fa-github"></i></a></li>
+              <li><a class="twitter" href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="dribbble" href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/in/snehaanbhawal" target="_blank"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+
+
+
+  <script src="{{url_for('static', filename='suggestions.js')}}"></script>
+  <script src="{{url_for('static', filename='autocomplete.js')}}"></script>
+
+</body>
+</html>
